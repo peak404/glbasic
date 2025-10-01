@@ -34,7 +34,7 @@ func main(){
 		s, sep :="", ""
 		
 		for
-		_, arg := range os.Args[1:] {
+		_, arg := range os.Args[2:] {
 		s += sep + arg
 		sep =
 		" "
