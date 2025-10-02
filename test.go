@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"os"
+	//"os"
 )
 
 // func main(){
@@ -28,19 +28,22 @@ import (
 	// }
 	// fmt.Println(count)
 	
-func main(){
+// func main(){
 
 		
-		s, sep :="", ""
+// 		s, sep :="", ""
 		
-		for
-		_, arg := range os.Args[2:] {
-		s += sep + arg
-		sep =
-		" "
-		}
-		fmt.Println(s)
+// 		for
+// 		_, arg := range os.Args[2:] {
+// 		s += sep + arg
+// 		sep =
+// 		" "
+// 		}
+// 		fmt.Println(s)
 	
 
-}
+// }
 
+func main(){
+	fmt.Println("hi there")
+}
