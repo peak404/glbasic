@@ -14,7 +14,7 @@ func main(){
 	// }
 	cards:=newDeck()
 
-	deal(cards,5)
+	deal(cards,3)
 	// cards.print()
 
 }
