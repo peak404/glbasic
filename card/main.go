@@ -1,6 +1,9 @@
 package main
 
-// import "fmt"
+import (
+	
+	"fmt"
+)
 
 func main(){
 	// var card string = "spades"
@@ -13,9 +16,18 @@ func main(){
 	// 	fmt.Println(i,card)
 	// }
 	cards:=newDeck()
+	fmt.Println(cards.toString())
 
-	deal(cards,5)
+	// hand,remain:=deal(cards,15)
+	// hand.print()
+	// remain.print()
+
 	// cards.print()
+
+	// i:="hello world"
+	// j:=[]byte(i);
+	// fmt.Println(string(j))
+	
 
 }
 // func newCard() string{
