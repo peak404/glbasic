@@ -2,7 +2,7 @@ package main
 
 import (
 	
-	"fmt"
+	// "fmt"
 )
 
 func main(){
@@ -15,8 +15,18 @@ func main(){
 	// for i, card :=range cards{
 	// 	fmt.Println(i,card)
 	// }
-	cards:=newDeck()
-	fmt.Println(cards.toString())
+
+	// cards:=newDeck()
+	// fmt.Println(cards.toString())
+	// cards.saveToFile("my_cards")
+
+
+	// cards2 :=newDeckFromFile("my_cards")
+	// cards2.print()
+	cards3:= newDeck()
+	cards3.shuffle()
+	cards3.print()
+
 
 	// hand,remain:=deal(cards,15)
 	// hand.print()
