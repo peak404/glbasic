@@ -11,14 +11,14 @@ import (
 )
 type deck []string
 
-func newDeck() deck {
+func newDeck() deck { 
 	cards := deck{}
 	cardSuit := []string{"spades", "diamonds", "heart", "club"}
-	cardValue := []string{"ace", "two", "three", "four "}
+	cardValue := []string{"ace", "two", "three", "four"}
 
 	for _, suit := range cardSuit {
 		for _, value := range cardValue {
-			cards = append(cards, value+" -of- "+suit)
+			cards = append(cards, value+" of "+suit)
 		}
 	}
 
