@@ -28,7 +28,16 @@ func main(){
 			email:"www.ddl.com",zipCode:11111,
 		},
 	}
-	fmt.Printf("%+v",p)
-	
+	// fmt.Printf("%+v",p)
+	// pointerForP:=&p
+	p.updateName("dd")
+	p.print()
 	
 } 
+func(p1 *person)updateName(newFirstName string){
+	(*p1).firstName =  newFirstName
+}
+func (p1 person) print(){
+	fmt.Printf("%+v",p1)
+}
+
