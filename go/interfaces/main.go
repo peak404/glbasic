@@ -2,6 +2,7 @@ package main
 
 import(
 	"fmt"
+	"os"
 	
 	"net/http"
 )
@@ -10,9 +11,9 @@ func main(){
 	resp,err :=http.Get("http://www.google.com")
 	if err !=nil{
 		fmt.Println("error: ",err)
-		return
+		os.Exit(1)
 	}
 	resp.Body.Close()
-	fmt.Println(resp.StatusCode)
+	fmt.Println(resp.Status)
 
 }
