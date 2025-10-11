@@ -6,7 +6,7 @@ func main(){
 	colors := map[string]string{
 		"red":"#ff0000",
 		"green":"#f3434",
-		"yellow":"#f34ff",
+		"yellow":"#f34fff",
 	}
 	 
 	// var colors map[string]string
