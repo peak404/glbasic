@@ -38,3 +38,15 @@
 // func (spanishBot) getGreeting() string{
 // 	return "hola"
 // }
+
+// type rect struct{
+// 	width , height float64
+// }
+
+// funct (r rect) area float64{
+// 	return r.width*r.height
+// }
+
+// funct (r rect) perim float64{
+// 	return 2*(r.width*r.height)
+// }
