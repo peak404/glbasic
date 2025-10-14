@@ -1,23 +1,107 @@
-package main
+// package main
 
-import(
-	"fmt"
-	"os"
-	"net/http"
-)
+// import(
+// 	"fmt"
+// 	"os"
+// 	"net/http"
+// 	"io"
+// )
 
-func main(){
-	resp,err :=http.Get("http://www.google.com")
-	if err !=nil{
-		fmt.Println("error: ",err)
-		os.Exit(1)
-	}
-	resp.Body.Close()
-	fmt.Println(resp.Status)
+
+
+
+
+
+
+
+
+
+
+
+
+
+// type shape interface{
+// 	getArea() float64
+// }
+
+// type triangle struct{
+// 	height,base float64
+// }
+
+// type square struct{
+// 	 sideLength float64
+// }
+//  func ( t triangle) getArea() float64{
+
+// 	return 0.5*t.base*t.height
+
+//  }
+
+//  func (s square) getArea() float64{
+// 	return s.sideLength*s.sideLength
+//  }
+
+
+// func printArea(s shape){
+// 	fmt.Println(s.getArea())
+
+// }
+
+
+
+// type logWriter struct{
+
+// }
+// func main(){
+
+
+
+
+
+
+
+
+
+
+// 	t:=triangle{base:10,height:10}
+// 	s:=square{sideLength: 10}
+// 	printArea(t)
+// 	printArea(s)
+
+
+
+
+
+
+
+
+
+// 	resp,err :=http.Get("http://www.google.com")
+// 	if err !=nil{ 
+// 		fmt.Println("error: ",err)
+// 		os.Exit(1)
+// 	}
+	
+// 	// fmt.Println(resp.Status)
+
+// 	// bs:=make([]byte,99999)
+// 	// resp.Body.Read(bs)
+// 	// fmt.Println(string(bs))
+
+// 	lw:=logWriter{}
+// 	// io.Copy(os.Stdout,resp.Body)
+// 	io.Copy(lw,resp.Body)
+
+// }
+// func (logWriter) Write(bs []byte) (int,error){
+// 	fmt.Println(string(bs))
+// 	fmt.Println("->>>>>>>>>>>",len(bs))
 
 	
+// 	return len(string(bs)), nil
 
-}
+	
+// }
 
 
 // package main
