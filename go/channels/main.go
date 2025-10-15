@@ -2,42 +2,82 @@ package main
 
 import (
 	"fmt"
+	
 	"net/http"
-
+	"strings"
+	"os"
+	
 )
 
 
 
- func main(){
-	links:=[]string{
-		"http://google.com",
-		"http://facebook.com",
-		"http://stackoverflow.com",
-		"http://golang.org",
-		"http://amazon.com",
+func main(){
+
+	c :=make(chan string)
+
+	links :=[]string{
+		"http://www.nfl.com",
+		"http://www.amazon.com",
+		"http://www.apple.com",
+		"http://nba.com",
 
 	}
-	 
-	c:=make(chan string)
-
-
 	for _,link:=range links{
-		 go checkLink(link,c)
+		
+		
+		go stringCheck([]string{link},c)
+		go checkLink(link,c)
+		}
+
+
+	for i:=0; i<len(links)*2;i++{
+		msg:=<-c
+		fmt.Println(msg)
+
+		
+	}	
 	}
+	
+	
 
-	fmt.Println(<-c)
+	// stringCheck(links)
 
 
- }
 
- func checkLink(link string,c chan string){
-	_, err := http.Get(link)
+
+
+func stringCheck (urls []string,c chan string){
+	
+	if len(urls) ==0 {
+		return 
+	}
+	for _,url:=range urls{
+		if (strings.HasPrefix(url,"http://") ||strings.HasPrefix(url,"https://"))&&strings.HasSuffix(url,".com"){
+			// fmt.Println(url)
+			c <- url
+			
+		}else{
+			// fmt.Println("error, must start with \"https:// or http\" or not endWith .com or contains b")
+			c<-"error, must start with \"https:// or http\" or not endWith .com or contains b"
+			os.Exit(1)
+		}
+
+	}
+	
+
+
+	
+	}
+func checkLink(link string,c chan string){
+
+	
+	resp,err :=http.Get(link)
 	if err!=nil{
-		fmt.Println("something wrong",err)
-		c<- "something wrong fro m channel"
+		// fmt.Println("error",err)
+		c<-link+"might be down"
 		return
 	}
-	fmt.Println(link+" is up")
-	c<- "it's up from channel"
-	// fmt.Println(resp.Status)
- }
+	c<-link
+	fmt.Println(resp.Status)
+	
+}
