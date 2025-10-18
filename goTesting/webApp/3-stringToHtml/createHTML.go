@@ -1,4 +1,4 @@
-package main
+package main    
 
 import (
 	"fmt"
@@ -20,7 +20,7 @@ func main() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 		</head>
-	<body>the name is = `+name +`
+	<body>the name is = 666666`+name +`
     
 	</body>
 	</html>
