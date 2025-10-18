@@ -1,6 +1,9 @@
 package main
-import "fmt"
-
+import (
+	"fmt"
+	"time"
+	"math/rand"
+)
 
 func main(){
 	//print emoji
@@ -14,6 +17,12 @@ func main(){
 	fmt.Printf("%v \t %b \t %X\n",d1,d1,d1)
 	fmt.Printf("%v \t %b \t %X\n",e1,e1,e1)
 
+	fmt.Println(time.Now())
+	fmt.Println(rand.Intn(10))
+
+	//var y int
 	
+
+
 
 }
