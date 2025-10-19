@@ -26,7 +26,7 @@ func main() {
 			log.Fatalln(err)
 		}
 	
-	err=tpl.ExecuteTemplate(os.Stdout,"tpl2.gohtml",nil)
+	err=tpl.ExecuteTemplate(os.Stdout,"tpl2.gohtml",`无语了`)
 		if err !=nil{
 			log.Fatalln(err)
 		}
