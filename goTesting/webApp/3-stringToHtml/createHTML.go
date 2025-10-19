@@ -39,7 +39,8 @@ func main() {
 
 	}
 	defer i.Close()
-	s,err:=io.Copy(i, strings.NewReader(str))
-	fmt.Println(s)
+	io.Copy(i, strings.NewReader(str))
+	// s,err:=io.Copy(i, strings.NewReader(str))
+	// fmt.Println(s)
 	
 }
