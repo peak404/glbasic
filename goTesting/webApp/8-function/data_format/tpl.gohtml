@@ -8,6 +8,7 @@
 
 {{range .Wisdom}}
 {{uc .Name}}
+{{uc .Word}}
 {{end}}
 
 
@@ -15,6 +16,11 @@
 {{ft .Name}}
 {{end}}
 
+{{range .Transport}}
+{{if eq .Manufacturer "toyota"}}
+{{.Model}}
+{{end}}
+{{end}}
 
 </body>
 </html>
