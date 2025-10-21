@@ -25,9 +25,21 @@ func main(){
 	}
 	u2 := user{
 		Name:"shen",
-		
+		Word: "play for win",
+		Admin: true,
+	}
+	u3 :=user{
+		Name: "kk",
+		Word: "zen",
+		Admin: true,
 	}
 
+	users :=[]user{u1,u2,u3}
+
+	err:=tpl.Execute(os.Stdout,users)
+	if err !=nil{
+		log.Fatalln(err)
+	}
 
 
 
