@@ -1,35 +1,63 @@
 package main
 
-import(
+import (
 	"log"
 	"os"
 	"text/template"
 )
+
 var tpl *template.Template
 
-type hotel struct{
-	Name string
-	Address string
-	City string 
-	Zip string 
+func init() {
+	tpl = template.Must(template.ParseFiles("tpl3.gohtml"))
+}
+
+type hotelAtt struct {
+	Name, Address, Region string
+}
+type region struct {
 	Region string
-} 
-
-type hotel_CA struct{
-	hotels []hotel
-
+	Hotels []hotelAtt
 }
 
+type Regions []region
 
+func main() {
+	h := Regions{
+		region{
+			Region: "East",
+			Hotels: []hotelAtt{
+				hotelAtt{
+					Name:    "east hotel",
+					Address: "east ave",
+					Region:  "east",
+				},
+				hotelAtt{
+					Name:    "e hotel",
+					Address: "e ave",
+					Region:  "east",
+				},
+			},
+		},
+		region{
+			Region: "West",
+			Hotels: []hotelAtt{
+				hotelAtt{
+					Name:    "west hotel",
+					Address: "west ave",
+					Region:  "west",
+				},
+				hotelAtt{
+					Name:    "w hotel",
+					Address: "w ave",
+					Region:  "west",
+				},
+			},
+		},
+	}
 
-
-
-
-
-
-
-
-func init(){
-	tpl = template.Must(template.ParseFiles("tpl.gohtml"))
+	err := tpl.Execute(os.Stdout, h)
+	if err != nil {
+		log.Fatalln(err)
+	}
 }
-
