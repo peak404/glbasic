@@ -7,11 +7,16 @@
 <body>
 
 {{range .}}
+<h1>{{.Type}}</h1>
+<ul>
 {{range .MealInfo}}
-  <p>{{.TypeMeal}} - {{.Name}} - ${{.Price}}</p>
-  {{end}}
+    <li>商品：{{.Name}} - 价钱：{{.Price}}</li>
+{{end}}
+</ul>
+
 
 {{end}}
+
 
 </body>
 </html>
