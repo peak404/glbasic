@@ -11,7 +11,7 @@ func main(){
 	li, err :=net.Listen("tcp",":8080")
 
 	if err != nil{
-		log.Fatalln(err)
+		log.Panic(err)
 	}
 	defer li.Close()
 
@@ -23,9 +23,11 @@ func main(){
 			continue
 		}
 
-		io.WriteString(conn,"\nhello fromm TCP server\n")
-		fmt.Fprintln(conn,"hows your date")
-		fmt.Fprintf(conn,"very very good")
+		io.WriteString(conn, "\nhello fromm TCP server\n")
+		fmt.Fprintln(conn, "hows your date")
+		fmt.Fprintf(conn, "%v\n","very very good")
+		fmt.Println(conn.RemoteAddr())
+
 		conn.Close()
 
 	}
