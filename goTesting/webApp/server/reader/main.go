@@ -3,8 +3,8 @@ package main
 
 
 import(
-	"os"
-	"io"
+	"bufio"
+	"fmt"
 	"log"
 	"net"
 )
@@ -17,21 +17,24 @@ func main(){
 	defer li.Close()
 
 	for {
-		conn, err !=li.Accept()
+		conn, err :=li.Accept()
+		if err !=nil{
 		log.Println(err)
 		continue
+		}
+		go handle(conn)
 	}
-	go handle(conn)
-
-	}
 
 
-	func handle(conn,net.Conn){    //net.Conn is type
+}
+
+
+	func handle(conn net.Conn){    //net.Conn is type
 		scanner :=bufio.NewScanner(conn) 	//Wraps the connection in a Scanner — this reads text input line by line.
 		
 		for scanner.Scan(){
 			ln:=scanner.Text()
-			fmt.Printlb(ln)
+			fmt.Println(ln)
 		}
 
 		defer conn.Close()
