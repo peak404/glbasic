@@ -28,6 +28,7 @@ func main(){
 
 		io.WriteString(conn, "\nhello fromm TCP server\n")   //io.WriteString 直接把字符串转为字节并调用 conn.Write。
 		fmt.Fprintln(conn, "hows your date")
+		
 		fmt.Fprintf(conn, "%v\n","very very good")
 		fmt.Println(conn.RemoteAddr())
 
