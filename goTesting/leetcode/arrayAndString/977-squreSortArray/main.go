@@ -23,3 +23,24 @@ func sortSquare(num [] int)[]int{
 	return newNum
 }
 
+// func mySort(nums [] int)[]int{
+// 	//newNum :=[]int{}
+
+// 	size:=len(nums)
+
+// 	for i:=0; i<size-1;i++{
+// 		minIndex:=i
+// 		for j:=1;j<size;j++{
+// 			if nums[j]<nums[minIndex]{
+// 				minIndex= j
+// 			}
+// 		}
+
+
+
+// 	}
+	
+	
+
+
+// }
